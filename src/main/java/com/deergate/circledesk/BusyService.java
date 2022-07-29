@@ -91,5 +91,10 @@ public class BusyService {
 
     private void checkData(Object data, Object cache) {
         //just pass
+        try {
+            Thread.sleep(2);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
