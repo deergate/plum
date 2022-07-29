@@ -30,7 +30,7 @@ public class Transporter extends BaseClass {
     
     public Object transport(Object data){
         System.out.println("sending to v+ ...");
-        pause(35, 300);
+        pause(35, 10);
         return new Object();
     }
 }

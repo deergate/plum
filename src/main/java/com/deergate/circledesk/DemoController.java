@@ -60,7 +60,7 @@ public class DemoController {
         details.put("Min", min);
         details.put("Max", max);
         details.put("Avg", avg);
-        details.put("Tps", (int)(1000/avg*250));
+        details.put("Tps", (int)(1000/avg*200));
         return details;
     }
 }
