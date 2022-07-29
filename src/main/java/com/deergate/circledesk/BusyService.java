@@ -46,6 +46,7 @@ public class BusyService {
     Transporter transporter;
     
     public Object onlineTransaction(Object input){
+        baseExp();
         System.out.println("start transaction ...");
         //解析报文
         var data = datagramUtil.parse8583(input);
@@ -58,13 +59,9 @@ public class BusyService {
         esscService.checkMac(data);
         
         //转PIN
-        if(hasPIN()){
-            data = esscService.transPIN(data);
-        }
+        data = esscService.transPIN(data);
         //转 New PIN
-        if(hasNewPIN()){
-            data = esscService.transNewPIN(data);
-        }
+        data = esscService.transNewPIN(data);
         
         //生成MAC
         data = esscService.createMac(data);
@@ -81,18 +78,20 @@ public class BusyService {
         return result;
     }
 
-    private boolean hasNewPIN() {
-        return random.nextInt(10)<2;
-    }
-
-    private boolean hasPIN() {
-        return random.nextInt(10)<3;
-    }
-
     private void checkData(Object data, Object cache) {
         //just pass
         try {
-            Thread.sleep(2);
+            Thread.sleep(3);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    private void baseExp() {
+        //基础损耗，包括接入层到核心路由间服务调用
+        //数据处理、http处理、MQ消息处理等
+        try {
+            Thread.sleep(10);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
