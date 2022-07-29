@@ -30,7 +30,7 @@ public class CacheUtil extends BaseClass {
     
     public Object getCache(){
         System.out.println("getting cache ...");
-        pause(0, 12);
+        // pause(0, 12);
         return new Object();
     }
 }
