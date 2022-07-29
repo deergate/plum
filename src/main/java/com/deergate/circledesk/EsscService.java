@@ -30,25 +30,25 @@ public class EsscService extends BaseClass {
     
     public boolean checkMac(Object data){
         System.out.println("checking mac ...");
-        pause(1, 4);
+        pause(3, 2);
         return true;
     }
 
     public Object transPIN(Object data) {
         System.out.println("transing pin ...");
-        pause(1, 4);
+        pause(3, 2);
         return new Object();
     }
 
     public Object transNewPIN(Object data) {
         System.out.println("transing new pin ...");
-        pause(1, 4);
+        pause(3, 2);
         return new Object();
     }
 
     public Object createMac(Object data) {
         System.out.println("creating mac ...");
-        pause(1, 4);
+        pause(3, 2);
         return new Object();
     }
 }
