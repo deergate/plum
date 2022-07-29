@@ -30,13 +30,13 @@ public class DatagramUtil extends BaseClass {
     
     public Object parse8583(Object input){
         System.out.println("parsing 8583 ...");
-        pause(7, 5);
+        pause(1, 1);
         return new Object();
     }
 
     public Object make8583(Object response) {
         System.out.println("making 8583 ...");
-        pause(7, 5);
+        pause(1, 1);
         return new Object();
     }
 }
