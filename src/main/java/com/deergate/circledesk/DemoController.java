@@ -46,6 +46,7 @@ public class DemoController {
         for (int i = 0; i < loop; i++) {
             var data = new Object();
             long start = System.currentTimeMillis();
+            baseExp();
             busyService.onlineTransaction(data);
             long end = System.currentTimeMillis();
             expenseList.add((end - start));
@@ -62,5 +63,15 @@ public class DemoController {
         details.put("Avg", avg);
         details.put("Tps", (int)(1000/avg*200));
         return details;
+    }
+    
+    private void baseExp() {
+        //基础损耗，包括接入层到核心路由间服务调用
+        //数据处理、http处理、MQ消息处理等
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

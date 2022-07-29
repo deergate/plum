@@ -46,7 +46,7 @@ public class BusyService {
     Transporter transporter;
     
     public Object onlineTransaction(Object input){
-        baseExp();
+        
         System.out.println("start transaction ...");
         //解析报文
         var data = datagramUtil.parse8583(input);
@@ -87,13 +87,4 @@ public class BusyService {
         }
     }
     
-    private void baseExp() {
-        //基础损耗，包括接入层到核心路由间服务调用
-        //数据处理、http处理、MQ消息处理等
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
 }
